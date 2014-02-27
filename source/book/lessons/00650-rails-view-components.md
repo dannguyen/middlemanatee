@@ -1,0 +1,3 @@
+---
+title: Rails View components
+---

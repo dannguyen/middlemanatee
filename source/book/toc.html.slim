@@ -1,0 +1,10 @@
+---
+title: Table of Contents
+---
+
+- data.book_lessons.each do |lesson|
+
+  div.lesson
+    h4 = link_to lesson.data.title, lesson.url
+    - if lesson.data.description.present?
+      p = lesson.data.description

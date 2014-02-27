@@ -42,34 +42,24 @@ page "/", :layout => :home do
   @hide_nav = true
 end
 
+page "/book/**/**", :layout => :book do 
 
-###
-# Compass
-###
-
-# Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
+end
 
 
-# Per-page layout changes:
-#
-# With no layout
-# page "/path/to/file.html", :layout => false
-#
-# With alternative layout
-# page "/path/to/file.html", :layout => :otherlayout
-#
-# A path which all have the same layout
-# with_layout :admin do
-#   page "/admin/*"
-# end
+### CALLBACK FUN
 
-# Proxy (fake) files
-# page "/this-page-has-no-template.html", :proxy => "/template-file.html" do
-#   @which_fake_page = "Rendering a fake page with a variable"
-# end
+
+ready do
+  data.store "book_lessons", sitemap.resources.select{|r| r.path =~ /book\/lessons/}.sort_by{|s| s.path}
+
+  # sitemap.resources.group_by {|p| p.data["category"] }.each do |category, pages|
+  #   proxy "/categories/#{category}.html", "category.html", 
+  #     :locals => { :category => category, :pages => pages }
+  # end
+end
+
+
 
 # Site Settings
 @analytics_account = false
