@@ -1,5 +1,6 @@
 require 'slim'
 
+
 set :encoding, "utf-8"
 
 I18n.enforce_available_locales = true
@@ -38,9 +39,6 @@ set :layout, :page
 page "/", :layout => :home do 
   @hide_nav = true
 end
-
-
-
 
 
 ###

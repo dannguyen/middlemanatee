@@ -15,3 +15,4 @@ gem "activesupport"
 gem "kramdown"
 gem "slim"
 gem 'coderay'
+gem 'pry'
