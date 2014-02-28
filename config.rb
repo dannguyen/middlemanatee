@@ -51,8 +51,6 @@ end
 
 
 ready do
-  data.store "book_lessons", sitemap.resources.select{|r| r.path =~ /book\/lessons/}.sort_by{|s| s.path}
-
   # sitemap.resources.group_by {|p| p.data["category"] }.each do |category, pages|
   #   proxy "/categories/#{category}.html", "category.html", 
   #     :locals => { :category => category, :pages => pages }

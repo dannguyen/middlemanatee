@@ -2,9 +2,13 @@
 title: Table of Contents
 ---
 
-- data.book_lessons.each do |lesson|
+- book_lessons.each do |lesson|
 
   div.lesson
-    h4 = link_to lesson.data.title, lesson.url
+    h4.title = link_to lesson.data.title, lesson.url
     - if lesson.data.description.present?
-      p = lesson.data.description
+      p.description = lesson.data.description
+    - if lesson.data.references.present?
+      - lesson.data.references.each do |ref|
+        li 
+          => ref_link_to( ref )

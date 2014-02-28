@@ -1,3 +1,5 @@
+require 'uri'
+
 def page_title
   title = "MiddleManatee" #Set site title here
 
@@ -26,6 +28,47 @@ def page_keywords
   end
 
   keywords.uniq.join(", ")
+end
+
+
+def ref_link_to(ref_object, link_to_opts = {})
+  url = ref_object.url
+
+  if url.present?
+    if url =~ %r{github.com/(\w+/\w+)/?$}
+      title ||= $1
+    else
+      title = ref_object.title || url
+    end
+
+    begin
+      uri = URI.parse(url)      
+    rescue => err
+      host = url
+    else
+      host = uri.host
+    end
+
+    return "#{link_to(title, url, link_to_opts)} #{ref_object.blurb} [#{link_to(host, url, link_to_opts)}]"
+  else
+    return ""
+  end
+end
+
+
+def book_lessons
+  sitemap.resources.select{|r| r.path =~ /book\/lessons/}.sort_by{|s| s.path}
+end
+
+
+def book_sections
+  h = Hash.new{|h,k| h[k] = [] }
+  book_lessons.inject(h) do |hsh, lesson|
+    subdir = "z"
+    hsh[subdir] << lesson
+
+    hsh
+  end
 end
 
 

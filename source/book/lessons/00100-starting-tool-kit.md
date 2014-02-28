@@ -1,6 +1,14 @@
 ---
 title: "Ruby Developer's Recommended Toolkit"
 description: Utilities and tools common to modern Rails and Ruby development
+
+references:
+  - url: http://www.sublimetext.com/3
+
+  - url: http://www.sequelpro.com/
+
+  - url: https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/
+
 ---
 
 
