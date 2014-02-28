@@ -38,7 +38,7 @@ end
 
 set :layout, :page
 
-page "/", :layout => :home do 
+page "/", :proxy => "/book/toc.html", :layout => :book do 
   @hide_nav = true
 end
 
@@ -61,7 +61,7 @@ end
 
 # Site Settings
 @analytics_account = false
-@typekit_account = false
+@typekit_account = 'deu1taf'
 
 # Asset Settings
 set :css_dir, 'assets/css'

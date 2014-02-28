@@ -63,8 +63,9 @@ end
 
 def book_sections
   h = Hash.new{|h,k| h[k] = [] }
+  
   book_lessons.inject(h) do |hsh, lesson|
-    subdir = "z"
+    subdir = lesson.path[%r{(?<=book/lessons/)[\w\-]+?(?=/)}]
     hsh[subdir] << lesson
 
     hsh

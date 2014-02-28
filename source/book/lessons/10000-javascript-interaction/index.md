@@ -1,5 +1,5 @@
 ---
-title: JavaScript Interaction
+title: JavaScript and Rails
 ---
 
 - Isotope
