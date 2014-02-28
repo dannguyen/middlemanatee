@@ -1,7 +1,7 @@
 require 'uri'
 
 def page_title
-  title = "MiddleManatee" #Set site title here
+  title = site_title #Set site title here
 
   if data.page.title
     title << " | " + data.page.title
@@ -55,6 +55,10 @@ def ref_link_to(ref_object, link_to_opts = {})
   end
 end
 
+
+def site_title
+  config[:title]
+end
 
 def book_lessons
   sitemap.resources.select{|r| r.path =~ /book\/lessons/}.sort_by{|s| s.path}

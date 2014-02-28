@@ -1,6 +1,6 @@
 require 'slim'
 
-
+set :title, "Introduction to Data Design with Ruby on Rails"
 set :encoding, "utf-8"
 
 I18n.enforce_available_locales = true

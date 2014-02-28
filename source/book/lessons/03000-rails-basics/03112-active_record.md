@@ -1,4 +1,4 @@
 ---
-title: Introduction to ActiveRecord
-description: YEA
+title: ActiveRecord
+description: The Rails ORM
 ---

@@ -1,4 +1,4 @@
 ---
-title: Introduction to ActiveSupport
-description: YEA
+title: ActiveSupport
+description: Strings and text
 ---

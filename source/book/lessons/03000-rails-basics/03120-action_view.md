@@ -1,4 +1,4 @@
 ---
-title: Introduction to ActionView
-description: YEA
+title: ActionView
+description: Helpers and such
 ---
